@@ -534,7 +534,7 @@ export function CheckoutModal({ isOpen, onClose, onBack, onOrderSuccess }: Check
       // This is critical for redirect-based payments like MobilePay, Klarna, etc.
       // Use backend API instead of Supabase to ensure proper permissions
       try {
-        const apiUrl = import.meta.env.VITE_API_URL || 'https://api.helmiesbites.fi';
+        const apiUrl = import.meta.env.VITE_API_URL || 'https://api.helmiesbites.com';
         const response = await fetch(`${apiUrl}/api/orders/${orderId}/payment-intent`, {
           method: 'PATCH',
           headers: {

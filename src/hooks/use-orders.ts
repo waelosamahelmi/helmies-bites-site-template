@@ -69,7 +69,7 @@ export function useCreateOrder() {
   return useMutation({
     mutationFn: async (orderData: any) => {
       // Use the platform API for order creation
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://api.helmiesbites.fi';
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://api.helmiesbites.com';
 
       const response = await fetch(`${apiUrl}/api/orders`, {
         method: 'POST',
