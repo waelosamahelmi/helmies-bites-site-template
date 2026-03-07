@@ -6,8 +6,10 @@ import { ThemeProvider } from './contexts/theme-context';
 import { TenantProvider } from './contexts/tenant-context';
 import { LanguageProvider } from './contexts/language-context';
 import { CartProvider } from './contexts/cart-context';
+import { AuthProvider } from './contexts/auth-context';
 import App from './App';
 import './index.css';
+import './lib/pwa-service';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,13 +36,15 @@ createRoot(document.getElementById('root')!).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <TenantProvider tenantSlug={tenantSlug}>
-          <ThemeProvider>
-            <LanguageProvider>
-              <CartProvider>
-                <App />
-              </CartProvider>
-            </LanguageProvider>
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider>
+              <LanguageProvider>
+                <CartProvider>
+                  <App />
+                </CartProvider>
+              </LanguageProvider>
+            </ThemeProvider>
+          </AuthProvider>
         </TenantProvider>
       </BrowserRouter>
     </QueryClientProvider>

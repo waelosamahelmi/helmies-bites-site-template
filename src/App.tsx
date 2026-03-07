@@ -4,6 +4,14 @@ import { Menu } from './pages/Menu';
 import About from './pages/About';
 import { Checkout } from './pages/Checkout';
 import { OrderSuccess } from './pages/OrderSuccess';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { Account } from './pages/Account';
+import { Loyalty } from './pages/Loyalty';
+import { Orders } from './pages/Orders';
+import Locations from './pages/Locations';
+import Contact from './pages/Contact';
+import Lounas from './pages/Lounas';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CartModal } from './components/CartModal';
@@ -42,6 +50,14 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<OrderSuccess />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/loyalty" element={<Loyalty />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/lounas" element={<Lounas />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
